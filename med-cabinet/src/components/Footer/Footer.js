@@ -35,10 +35,4 @@ function Footer ()  {
    )
 }
 
-
-
-
-export default Footer 
-
-
-hello
+export default Footer;

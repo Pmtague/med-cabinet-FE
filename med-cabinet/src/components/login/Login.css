@@ -1,0 +1,50 @@
+.loginForm {
+    display: inline-block;
+    padding: 20px;
+    width: 65%;
+    align-content: center;
+    margin: auto 0;
+    border: 1px solid #f0c8b6;;
+    background-color: #574841;
+    box-sizing: content-box;
+}
+
+.login-email {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.login-password {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width:100%;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.login-button {
+    font-size: 1.8rem;
+    border-radius: 5px;
+    padding: 6px;
+    width: 50%;
+    outline: none;
+    margin-bottom: 25px;
+}
+
+.login-button:hover{
+    background-color: #574841;
+    color: #f0c8b6;   
+}
