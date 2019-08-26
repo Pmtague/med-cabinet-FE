@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+//commented below line out due to possible conflicts
+//import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 // import PrivateRoute from './components/PrivateRoute'
 import RegistrationForm from './components/Registration/RegistrationForm'
@@ -9,7 +10,8 @@ import Login from './components/Login/Login.js';
 
 function App() {
   return (
-    <Router>
+//    commented out router
+    //<Router>
       <div className="App">
         <header className="App-header">
         <div logo='logo'>
@@ -22,7 +24,7 @@ function App() {
           <Footer />
         </div>
       </div>
-    </Router>
+    //</Router>
   );
 }
 
