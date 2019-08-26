@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import './Login.css';
 
 const Login = () => {
     const [ creds, setCreds ] = useState({ email: '', password: '' });
@@ -12,23 +14,24 @@ const Login = () => {
 
     // const handleSubmit = e => {
     //     e.preventDefault();
-    //     .post('http://localhost:5000/api/login', credentials)
+    //     .post('https://med-cabinet-temp.herokuapp.com/api/users/login', creds)
     //     .then(res => {
     //         localStorage.setItem('token', res.data.payload)
     //         props.history.push('/')
-    //         console.log(credentials)
-    //     })
+    //         console.log(creds)
+    //     })s
     //     .catch(err => {
     //         console.log('Error while logging in', err.response)
     //     })
     // };
 
     return (
-        <>
-            <h3>Log In</h3>
+        <div className="loginForm">
+            <h3>Sign In</h3>
             {/* <form onSubmit={handleSubmit}> */}
             <form>
                 <input
+                    className="login-email"
                     type="email"
                     name="email"
                     placeholder="email "
@@ -37,6 +40,7 @@ const Login = () => {
                     required
                 />
                 <input
+                    className="login-password"
                     type="password"
                     name="password"
                     placeholder="password"
@@ -44,11 +48,11 @@ const Login = () => {
                     onChange={handleChange}
                     required
                 />
-                <button>
+                <button className="login-button">
                     Log In
                 </button>
             </form>
-        </>
+        </div>
     );
 
 };
