@@ -1,0 +1,112 @@
+.register-form {
+    display: inline-block;
+    padding: 20px;
+    width:65%;
+    align-content: center;
+    margin: auto 0;
+    border: 1px solid #f0c8b6;;
+    margin-bottom: 60px;
+    background-color: #574841;
+    box-sizing: content-box
+}
+.logo   {
+    width:100%;
+    align-content: center;
+    align-items: center;
+    margin: auto 0;
+    border: 1px solid orange;
+    padding: 20px;
+    
+}
+
+.register-instructions{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.username {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 1rem;
+    width:100%;
+    font-size: 2.5rem;
+    box-sizing: border-box;
+    font-size: 2.5rem;
+}
+.name {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 1rem;
+    width:100%;
+    font-size: 2.5rem;
+    box-sizing: border-box;
+    font-size: 2.5rem;
+    
+}
+
+.email {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 1rem;
+    width:100%;
+    font-size: 2.5rem;
+    box-sizing: border-box;
+    font-size: 2.5rem;
+    
+}
+
+.phone {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 1rem;
+    width:100%;
+    font-size: 2.5rem;
+    box-sizing: border-box;
+    font-size: 2.5rem;
+}
+
+.address {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 1rem;
+    width:100%;
+    font-size: 2.5rem;
+    box-sizing: border-box;
+    font-size: 2.5rem;
+}
+
+.password
+{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 1rem;
+    width:100%;
+    font-size: 2.5rem;
+    box-sizing: border-box;
+    font-size: 2.5rem;
+}
+p {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.register-button{
+    font-size: 1.5rem
+}
+
+.register-button:hover{
+background-color: #574841;
+color: #f0c8b6;
+
+}
+
