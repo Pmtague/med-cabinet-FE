@@ -17,7 +17,7 @@ useEffect(()=> {
             <div className='register-form'>
             <p className='register-instructions'> Please provide all needed information below</p>
             
-            <Form>
+        <Form>
             <p>Enter a valid name</p>
                 <Field
                    className = 'name'
@@ -82,7 +82,7 @@ useEffect(()=> {
                 <div>
                 <button className='register-button'type='submit'>Register</button>
                 </div>
-            </Form>
+        </Form>
             
             </div>
                      

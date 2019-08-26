@@ -40,5 +40,3 @@ function Footer ()  {
 
 export default Footer 
 
-
-hello
