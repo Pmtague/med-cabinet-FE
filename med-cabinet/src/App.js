@@ -10,17 +10,18 @@ import MedCabinetLogo from './images/MedCabinetLogo.png';
 function App() {
   return (
     <Router>
-      <div className="App">
-        <header className="App-header">
-        <div logo='logo'>
-          <img src={MedCabinetLogo} alt="med cabinet logo" />
-        </div>
+      <div className="App App-header">
+        {/* <header className="App-header"> */}
+          <div className='image-logo'>
+            <img src={MedCabinetLogo} alt="med cabinet logo" />
+          </div>
           <Route path='/login' component={Login} />
           <Route path='/register' component={RegistrationForm} />
-        </header>
-        <div>
           <Footer />
-        </div>
+        {/* </header> */}
+        {/* <div> */}
+          {/* <Footer /> */}
+        {/* </div> */}
       </div>
     </Router>
   );
