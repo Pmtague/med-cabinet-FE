@@ -3,9 +3,8 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     height: 5rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     background-color: #574841; 
     color: #f0c8b6;
-    padding-top: 20px; 
-
+    align-items: center;
 }

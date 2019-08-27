@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Login.css';
 
-const Login = () => {
+const Login = (props) => {
     const [ creds, setCreds ] = useState({ email: '', password: '' });
 
     const handleChange = e => {
@@ -12,26 +12,26 @@ const Login = () => {
         });
     };
 
-    // const handleSubmit = e => {
-    //     e.preventDefault();
-    //     .post('https://med-cabinet-temp.herokuapp.com/api/users/login', creds)
-    //     .then(res => {
-    //         localStorage.setItem('token', res.data.payload)
-    //         props.history.push('/')
-    //         console.log(creds)
-    //     })s
-    //     .catch(err => {
-    //         console.log('Error while logging in', err.response)
-    //     })
-    // };
+    const handleSubmit = e => {
+        e.preventDefault();
+        axios
+            .post('https://med-cabinet-temp.herokuapp.com/api/users/login', creds)
+            .then(res => {
+                localStorage.setItem('token', res.data.payload)
+                props.history.push('/')
+                console.log(creds)
+            })
+            .catch(err => {
+                console.log('Error while logging in', err.response)
+            });
+    };
 
     return (
         <div className="loginForm">
             <h3>Sign In</h3>
-            {/* <form onSubmit={handleSubmit}> */}
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input
-                    className="login-email"
+                    className="login-fields"
                     type="email"
                     name="email"
                     placeholder="email "
@@ -39,8 +39,9 @@ const Login = () => {
                     onChange={handleChange}
                     required
                 />
+
                 <input
-                    className="login-password"
+                    className="login-fields"
                     type="password"
                     name="password"
                     placeholder="password"
@@ -48,6 +49,11 @@ const Login = () => {
                     onChange={handleChange}
                     required
                 />
+
+                <p>Don't have an account? Register&nbsp;
+                    <a className="signupRedirect" href="/register">here</a>
+                </p>
+
                 <button className="login-button">
                     Log In
                 </button>

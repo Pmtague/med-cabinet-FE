@@ -1,30 +1,28 @@
-import React, {Component} from 'react';
-//commented below line out due to possible conflicts
-//import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 // import PrivateRoute from './components/PrivateRoute'
-import RegistrationForm from './components/Registration/RegistrationForm'
-import Footer from './components/Footer/Footer'
-import MedCabinetLogo from './images/MedCabinetLogo.png'
+import RegistrationForm from './components/Registration/RegistrationForm';
 import Login from './components/Login/Login.js';
+import Footer from './components/Footer/Footer';
+import MedCabinetLogo from './images/MedCabinetLogo.png';
 
 function App() {
   return (
-//    commented out router
-    //<Router>
+    <Router>
       <div className="App">
         <header className="App-header">
         <div logo='logo'>
-          <img src= {MedCabinetLogo} />
+          <img src={MedCabinetLogo} alt="med cabinet logo" />
         </div>
-        <Route path='/login' component={Login} />
-        <Route exact path='/register' component={RegistrationForm}/>
+          <Route path='/login' component={Login} />
+          <Route path='/register' component={RegistrationForm} />
         </header>
         <div>
           <Footer />
         </div>
       </div>
-    //</Router>
+    </Router>
   );
 }
 
