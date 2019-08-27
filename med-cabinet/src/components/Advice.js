@@ -3,7 +3,8 @@ import axios from 'axios';
 
 import { Link } from 'react-router-dom';
 
-import { AdviceCard } from './AdviceCard';
+import AdviceCard from './AdviceCard';
+import { getThemeProps } from '@material-ui/styles';
 
 export default class Advice extends React.Component {
 	state = {
@@ -12,7 +13,7 @@ export default class Advice extends React.Component {
 
 	componentDidMount() {
 		axios
-			.get('')
+			.get('http://strainapi.evanbusse.com/dqEbrK0/strains/search/name/Candy')
 			.then(res => {
 				console.log('Advice Data', res.data)
 				this.setState({advice: res.data})
@@ -26,17 +27,17 @@ export default class Advice extends React.Component {
 		return (
 			<div className='advice-list'>
 				{this.state.advice.map(adv => (
-					<AdviceDetails key={ adv.id } advice={ adv } />
+					<AdviceCard key={ adv.id } advice={ adv } />
 				))}
 			</div>
 		);
 	}
 }
 
-function AdviceDetails({ adv }) {
-	return (
-		<Link to={`/advice/${ adv.id }`}>
-			<AdviceCard advice={ adv } />
-		</Link>
-	)
-}
+// function AdviceDetails({ adv }) {
+// 	return (
+// 		<Link to={`/advice/${ adv.id }`}>
+// 			<AdviceCard advice={ adv } />
+// 		</Link>
+// 	)
+// }

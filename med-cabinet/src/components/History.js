@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import { Link } from 'react-router-dom';
 
-import { HistoryCard } from './HistoryCard';
+import HistoryCard from './HistoryCard';
 
 export default class History extends React.Component {
 	state = {
@@ -12,7 +12,7 @@ export default class History extends React.Component {
 
 	componentDidMount() {
 		axios
-			.get('')
+			.get('http://strainapi.evanbusse.com/dqEbrK0/strains/search/name/Candy')
 			.then(res => {
 				console.log('History Data', res.data)
 				this.setState({history: res.data})
@@ -26,17 +26,17 @@ export default class History extends React.Component {
 		return (
 			<div className='History-list'>
 				{this.state.history.map(hist => (
-					<HistoryDetails key={ hist.id } history={ hist } />
+					<HistoryCard key={ hist.id } history={ hist } />
 				))}
 			</div>
 		);
 	}
 }
 
-function HistoryDetails({ hist }) {
-	return (
-		<Link to={`/history/${ hist.id }`}>
-			<HistoryCard History={ hist } />
-		</Link>
-	)
-}
+// function HistoryDetails({ hist }) {
+// 	return (
+// 		<Link to={`/history/${ hist.id }`}>
+// 			<HistoryCard History={ hist } />
+// 		</Link>
+// 	)
+// }
