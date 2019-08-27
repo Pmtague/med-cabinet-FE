@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 	},
       });
       
-function AdviceCard(props) {
+function StrainCard(props) {
 	const classes = useStyles();
       
 	return (
@@ -31,10 +31,10 @@ function AdviceCard(props) {
 	      />
 	      <CardContent>
 		<Typography gutterBottom variant="h5" component="h2">
-		  { props.advice.name }
+		  { props.strain.name }
 		</Typography>
 		<Typography variant="body2" color="textSecondary" component="p">
-		  { props.advice.race }
+		  { props.strain.race }
 		</Typography>
 	      </CardContent>
 	    </CardActionArea>
@@ -42,4 +42,4 @@ function AdviceCard(props) {
 	);
 }
 
-export default AdviceCard;
+export default StrainCard;

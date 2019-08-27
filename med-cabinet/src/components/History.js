@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import HistoryCard from './HistoryCard';
 
-export default class History extends React.Component {
+class History extends React.Component {
 	state = {
 		history: [],
 	};
@@ -32,6 +32,8 @@ export default class History extends React.Component {
 		);
 	}
 }
+
+export default History;
 
 // function HistoryDetails({ hist }) {
 // 	return (

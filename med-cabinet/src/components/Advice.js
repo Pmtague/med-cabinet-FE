@@ -1,12 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import AdviceCard from './AdviceCard';
-import { getThemeProps } from '@material-ui/styles';
 
-export default class Advice extends React.Component {
+class Advice extends React.Component {
 	state = {
 		advice: [],
 	};
@@ -25,14 +24,19 @@ export default class Advice extends React.Component {
 
 	render() {
 		return (
-			<div className='advice-list'>
-				{this.state.advice.map(adv => (
-					<AdviceCard key={ adv.id } advice={ adv } />
-				))}
+			<div>
+				<h2>Suggested Strains</h2>
+				<div className='advice-list'>
+					{this.state.advice.map(adv => (
+						<AdviceCard key={ adv.id } advice={ adv } />
+					))}
+				</div>
 			</div>
 		);
 	}
 }
+
+export default Advice;
 
 // function AdviceDetails({ adv }) {
 // 	return (
