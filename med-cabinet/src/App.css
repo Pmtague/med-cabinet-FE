@@ -1,7 +1,13 @@
-html,body {
+* {
+  box-sizing: border-box;
+}
+
+html, body {
   width: 100%;
   font-size: 62.5%;
-  height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 .App {
   text-align: center;
@@ -36,8 +42,7 @@ html,body {
   }
 }
 
-
 .image-logo{
-  width: 100px;
-  height:100px;
+  height: 100%;
+  margin-top: 20px;
 }

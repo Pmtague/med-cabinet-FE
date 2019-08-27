@@ -1,12 +1,11 @@
-// import axios from 'axios'
+import axios from 'axios';
 
-// const axiosWithAuth = () => {
-//     return axios.create({
-//         headers: {
-//             authorization: loacalStorage.getItem('token')
+export const axiosWithAuth = () => {
+    const token = localStorage.getItem('token');
 
-//         }
-//     })
-// }
-
-// export default axiosWithAuth
+    return axios.create({
+        headers: {
+            Authorization: token
+        }
+    });
+};

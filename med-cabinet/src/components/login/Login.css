@@ -1,7 +1,8 @@
 .loginForm {
     display: inline-block;
     padding: 20px;
-    width: 65%;
+    width: 100%;
+    max-width: 500px;
     align-content: center;
     margin: auto 0;
     border: 1px solid #f0c8b6;;
@@ -9,11 +10,11 @@
     box-sizing: content-box;
 }
 
-.login-email {
+.login-fields {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     width: 100%;
+    max-width: 400px;
+    margin: auto;
     box-sizing: border-box;
     font-size: 2rem;
     margin-bottom: 25px;
@@ -22,17 +23,17 @@
     outline: none;
 }
 
-.login-password {
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width:100%;
-    box-sizing: border-box;
-    margin-bottom: 25px;
-    font-size: 2rem;
-    padding: 5px;
-    border-radius: 5px;
-    outline: none;
+p {
+    font-size: 1.8rem;
+    color: orange;
+}
+
+.signupRedirect {
+    color: orange;
+}
+
+.signupRedirect:hover {
+    color: #f0c8b6;
 }
 
 .login-button {

@@ -1,6 +1,5 @@
-import React from 'react'
-import {render} from 'react-dom'
-import './Footer.css'
+import React from 'react';
+import './Footer.css';
 
 // var style = {
 //     backgroundColor: "#F8F8F8",
@@ -21,18 +20,15 @@ import './Footer.css'
 //     width: '100%',
 //   }
 
-function Footer ()  {
+function Footer()  {
    return(
-       
        <footer>
            {/* <p style={phantom}/>
            <h5 style={style}>{children}</h5>
         */}
         <>Copyright © 2019 Med Cabinet</>
         </footer>
-    
-     
-   )
+   );
 }
 
 export default Footer;
