@@ -11,17 +11,12 @@ function App() {
   return (
     <Router>
       <div className="App App-header">
-        {/* <header className="App-header"> */}
           <div className='image-logo'>
             <img src={MedCabinetLogo} alt="med cabinet logo" />
           </div>
           <Route path='/login' component={Login} />
           <Route path='/register' component={RegistrationForm} />
           <Footer />
-        {/* </header> */}
-        {/* <div> */}
-          {/* <Footer /> */}
-        {/* </div> */}
       </div>
     </Router>
   );
