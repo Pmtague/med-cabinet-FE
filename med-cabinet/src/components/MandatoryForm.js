@@ -18,21 +18,38 @@ const MandatoryForm = ({errors, touched, values, status}) => {
             <h1>Let's Learn More About You!</h1>
             <Form>
             <Field component="select" className="condition-select" name="condition">
-                <option>What is your main goal in using cannabis?</option>
-                <option value="HIV/AIDS">HIV/AIDS</option>
-                <option value="Anxiety">Anxiety</option>
-                <option value="Cancer">Cancer</option>
-                <option value="Crohn’s disease">Crohn’s disease</option>
-                <option value="Depression">Depression</option>
-                <option value="Glaucoma">Glaucoma</option>
+                <option>You would like cannabis to help you deal with?</option>
+                <option value="Stress">Stress</option>
+                <option value="Pain">Pain</option>
+                <option value="Nausea">Nausea</option>
                 <option value="Insomnia">Insomnia</option>
-                <option value="Lupus">Lupus</option>
-                <option value="Multiple sclerosis">Multiple sclerosis</option>
-                <option value="Parkinson's disease">Parkinson’s disease</option>
-                <option value="PTSD">Post-traumatic stress disorder (PTSD)</option>
-                <option value="Rheumatoid arthritis">Rheumatoid arthritis</option>
+                <option value="Depression">Depression</option>
+                <option value="Loss of Appetite">Loss of Appetite</option>
+                <option value="Muscle Spasms">Muscle Spasms</option>
                 <option value="Seizures">Seizures</option>
-                <option value="Severe Chronic Pain">Severe Chronic Pain</option>
+                <option value="Fatigue">Fatigue</option>
+                <option value="Inflammation">Inflammation</option>
+                <option value="Spasticity">Spasticity</option>
+                <option value="Eye Pressure">Eye Pressure</option>
+                <option value="Cramps">Cramps</option>
+                <option value="Headaches">Headaches</option>
+                </Field>
+
+                <Field component="select" className="feel-select" name="feel">
+                <option>You would like cannabis to help you feel?</option>
+                <option value="Happy">Happy</option>
+                <option value="Euphoric">Euphoric</option>
+                <option value="Relaxed">Relaxed</option>
+                <option value="Giggly">Giggly</option>
+                <option value="Creative">Creative</option>
+                <option value="Uplifted">Uplifted</option>
+                <option value="Sleepy">Sleepy</option>
+                <option value="Energetic">Energetic</option>
+                <option value="Aroused">Aroused</option>
+                <option value="Focused">Focused</option>
+                <option value="Talkative">Talkative</option>
+                <option value="Hungry">Hungry</option>
+                <option value="Tingly">Tingly</option>
                 </Field>
                 
                 <Field component="select" className="used-select" name="used">

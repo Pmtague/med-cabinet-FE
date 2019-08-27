@@ -15,7 +15,7 @@ form {
     box-sizing: border-box;
   }
   
-  .condition-select, .used-select, .intake-select, .time-select {
+  .feel-select, .condition-select, .used-select, .intake-select, .time-select {
     display:flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -23,6 +23,10 @@ form {
     width:25%;
     font-size: 15px;
     box-sizing: border-box;
+  }
+
+  .feel-select:hover {
+    border: 2px solid #255e2f;
   }
   
   .condition-select:hover {
@@ -41,7 +45,7 @@ form {
     border: 2px solid #255e2f;
   }
   
-  .condition-select, .used-select, .intake-select, .time-select {
+  .feel-select, .condition-select, .used-select, .intake-select, .time-select {
     border-color: #aaa;
     box-shadow: 0 0 1px 3px white;
     box-shadow: 0 0 0 3px -moz-mac-focusring;
