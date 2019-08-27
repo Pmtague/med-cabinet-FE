@@ -1,12 +1,13 @@
 import React from 'react';
 import MandatoryForm from './components/MandatoryForm.js';
+import ReviewForm from './components/ReviewForm.js';
 import Footer from './components/Footer.js';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <MandatoryForm />
+      <ReviewForm />
       <Footer />
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
+import './MandatoryForm.css';
 
 const MandatoryForm = ({errors, touched, values, status}) => {
     const [questioner, setQuestioner] = useState ([]);
@@ -14,10 +15,10 @@ const MandatoryForm = ({errors, touched, values, status}) => {
 
     return (
         <div className="user-questioner">
-            <h1>Mandatory Questioner</h1>
+            <h1>Let's Learn More About You!</h1>
             <Form>
             <Field component="select" className="condition-select" name="condition">
-                <option>Please Select a Condition</option>
+                <option>What is your main goal in using cannabis?</option>
                 <option value="HIV/AIDS">HIV/AIDS</option>
                 <option value="Anxiety">Anxiety</option>
                 <option value="Cancer">Cancer</option>
@@ -54,14 +55,6 @@ const MandatoryForm = ({errors, touched, values, status}) => {
                 <option value="Night">Night</option>
                 </Field>
 
-                <option>If a doctor prescribed you cannabis, please fill out below.</option>
-                <Field type="text" name="doctor" placeholder="Name of Doctor" />
-                {/* <option>If a doctor prescribe your cannabis, please fill out below.</option> */}
-                {touched.doctor && errors.doctor && <p className="error">{errors.doctor}</p>}
-
-                <Field type="text" name="strain" placeholder="Cannabis Strain" />
-                {touched.strain && errors.strain && <p className="error">{errors.strain}</p>}
-
                 <button type="submit">Submit</button>
 
             </Form>
@@ -80,8 +73,8 @@ const FormikMandatoryForm = withFormik({
     },
 
     validationSchema: Yup.object().shape({
-        doctor: Yup.string().required("Need Doctor's Name!"),
-        strain: Yup.string().required("Need name of strain prescribed!")
+        doctor: Yup.string().required(),
+        strain: Yup.string().required()
     }),
 
     handleSubmit(values, {setStatus}){
