@@ -14,7 +14,7 @@ import {Route, Switch} from 'react-router-dom'
 import RegistrationForm from './components/Registration/RegistrationForm'
 import PrivateRoute from './components/PrivateRoute'
 import Login from './components/login/Login';
-
+import Dashboard from './components/Navigation/Dashboard/Dashboard'
 const App =() => {
   return (
       <div className="App">
@@ -24,16 +24,14 @@ const App =() => {
           <NavTab />
           </div>
           <div className='logo-container'>
-            
-              <img  src= {MedCabinetLogo} />
-    
+            <img  src= {MedCabinetLogo} />
           </div>
           </div>
           <div>
           <Switch>
               <Route path = '/register' component= {RegistrationForm}/>
               <Route path='/login' component= {Login} />
-              {/* <PrivateRoute exact path= '/dashboard' component= {Dashboard}/> */}
+              <Route exact path= '/dashboard' component= {Dashboard}/>
               {/* <PrivateRoute exact path= '/historicaldata' component= {HistoricalData}/>
               <Route exact path= '/strains' component= {Strains}/>
               <Route exact path= '/learnmore' component= {learnMore}/> 

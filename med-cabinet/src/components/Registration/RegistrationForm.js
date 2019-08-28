@@ -23,7 +23,7 @@ function  RegistrationForm ({ errors, touched, status, isSubmitting}) {
             <h3>Sign Up</h3>
             <Form>
 
-            <p>Enter your name</p>
+            <p className='nameEntry'>Enter your name</p>
                 <Field
                     className='name'
                     name='name'
@@ -78,7 +78,6 @@ function  RegistrationForm ({ errors, touched, status, isSubmitting}) {
                 <button className='register-button'type='submit' >Register</button>
                 </div>
         </Form>
-                <p>Already Have An Account?? Login from the menu bar</p>
             </div>
                      
         )

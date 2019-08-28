@@ -8,31 +8,33 @@ const NavTab = () => {
     return (
     <header className='nav-main-container'>
     <div className='nav-container'>
-        <div className='register-link'>
+        <div className='menu-link'>
         <Link to = '/register/'>Register</Link>
         </div>
-        <div className='dashboard-link'>    
+        <div className='menu-link'>    
         <Link to = '/dashboard'>Dashboard</Link>
         </div>
-        <div className='historical-link'>
+        <div className='menu-link'>
         <Link to = '/historicaldata/'>Historical Data </Link>
         </div>
-        <div className='strains-link'>
+        <div className='menu-link'>
         <Link to = '/strains/'>Strains</Link>
         </div>    
-        <div className='learn-link'>
+        <div className='menu-link'>
         <Link to = '/historicaldata/'>Learn More </Link>
         </div>
-        <div className='contact-link'>
+        <div className='menu-link'>
         <Link to = '/contact/'>Contact Us </Link>
         </div>
-        <div className='about-link'>
+        <div className='menu-link'>
         <Link to= '/about/'>About</Link>
         </div> 
-        <div className='login-link'> 
+        <hr></hr>
+        <div className='menu-link'> 
         <Link to= '/login/'>LogIn</Link>
         </div>
-    </div>  
+    </div> 
+
     </header>
     )
 }
