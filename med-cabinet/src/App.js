@@ -7,15 +7,16 @@ import MedCabinetLogo from './images/MedCabinetLogo.png';
 
 import NavTab from './components/Navigation/NavTab';
 // import Dashboard from './components/Navigation/Dashboard';
-// import HistoricalData from './components/Navigation/HistoricalData';
 // import Strains from './components/Navigation/Strains';
 // import ContactUs from './components/Navigation';
+import HistoricalData from './components/Navigation/History/HistoricalData.js';
 import {Route, Switch} from 'react-router-dom'
 import RegistrationForm from './components/Registration/RegistrationForm'
 import PrivateRoute from './components/PrivateRoute'
-import Login from './components/login/Login';
+import Login from './components/login/Login.js';
 import Dashboard from './components/Navigation/Dashboard/Dashboard'
-const App =() => {
+
+const App = () => {
   return (
       <div className="App">
          <header className="App-header">
