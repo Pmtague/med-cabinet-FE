@@ -1,3 +1,6 @@
+//testing the ability to be able to place an image in a component 
+// that will allow it to form fit to the window and automatically scale
+
 
 // import '../images'
 
