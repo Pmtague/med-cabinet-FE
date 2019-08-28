@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Collapse from '@material-ui/core/Collapse';
 import clsx from 'clsx';
 
-import "./HistoryCard.css";
+import "./HistoricalDataCard.css";
 
 const useStyles = makeStyles(theme => ({
 	card: {

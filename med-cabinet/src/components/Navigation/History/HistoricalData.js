@@ -3,8 +3,8 @@ import axios from 'axios';
 
 // import { Link } from 'react-router-dom';
 
-import HistoryCard from './HistoryCard';
-import "./History.css";
+import HistoricalDataCard from './HistoricalDataCard.js';
+import "./HistoricalData.css";
 
 const History = () => {
 	const [ historyData, setHistoryData ] = useState([]);
@@ -27,7 +27,7 @@ const History = () => {
 			<h3>Historical Data</h3>
 			<div className="history-card">
 				{historyData.map(hist => (
-					<HistoryCard key={hist.id} history={hist} />
+					<HistoricalDataCard key={hist.id} history={hist} />
 				))}
 			</div>
 		</div>
