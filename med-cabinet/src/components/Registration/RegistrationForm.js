@@ -13,12 +13,27 @@ useEffect(()=> {
         setUsers([...users, status]);
     }
 }, [status]);
+
+
+// handleSubmit =(event) => {
+//     event.preventDefault()
+//     axios
+//         .get('https://med-cabinet-temp.herokuapp.com/api/users', newUser)
+//         .then(res => {
+//             SetData(res.data)
+//         })
+//         .catch(error => {console.log('User profile was not created, please try again')})
+//         window.location.reload()
+
+// }
+
+
         return(
             <div className='register-form'>
             <p className='register-instructions'> Please provide all needed information below</p>
             
         <Form>
-            <p>Enter a valid name</p>
+            <p>Enter your name</p>
                 <Field
                    className = 'name'
                    name= 'name'
@@ -29,7 +44,7 @@ useEffect(()=> {
                     <p className ='error'>{errors.name}</p>
                 )}
                 
-                <p>Enter a valid phone email address</p>
+                <p>Enter an email address</p>
                 <Field
                     className = 'email'
                     name= 'email'
@@ -43,7 +58,7 @@ useEffect(()=> {
                    type = 'text'
                    placeholder= 'Userame'
                 />
-                <p>Enter a valid phone password</p>
+                <p>Enter a valid phone number</p>
                 <Field
                     className = 'password'
                     name= 'password'
@@ -54,24 +69,15 @@ useEffect(()=> {
                     <p className ='error'>{errors.password}</p>
                 )}
 
-                <p>Enter a valid physical address
-                <span className='optional'><em> (optional)</em></span>
-                </p>
-                <Field
-                    className = 'address'
-                    name= 'address'
-                    type = 'text'
-                    placeholder= 'Address'
-                />
+               
             
-                <p>Enter a valid phone number
-                <span><em>(optional)</em></span>
+                <p>Enter a valid zip code 
                 </p>
-                <Field
-                    className = 'phone'
-                    name= 'phone'
+                <Field 
+                    className = 'zip'
+                    name= 'zip'
                     type = 'number'
-                    placeholder= 'Phone'
+                    placeholder= 'Zip Code'
                 />
                 
                 
@@ -80,10 +86,9 @@ useEffect(()=> {
                 )}
                 
                 <div>
-                <button className='register-button'type='submit'>Register</button>
+                <button className='register-button'type='submit' >Register</button>
                 </div>
         </Form>
-            
             </div>
                      
         )
@@ -103,18 +108,21 @@ const FormikRegisterationForm = withFormik({
             username: Yup.string().required('Please enter your username'),
             password: Yup.string().required('Please enter your password'),
             email: Yup.string().required('Please enter your email'),
-            address: Yup.string().required('Please enter your address'),
-            phone: Yup.string().required('Please enter your phone'),
+            zip: Yup.number().max(5).required('Please enter your phone'),
             
         }),
-        handleSubmit(values, {setStatus}){
+        register(values, {setStatus}){
+            
             axios
             .post('http://localhost:5000/api/register/', values)
             .then(response => {
+
                 console.log(response)
-                setStatus(response.data);
+                localStorage.setStatus('token', response.data.payload)
+                window.history.push('/dashboard')
             })
-            .catch(error => console.log(error.response))
+            .catch(error => {
+                console.log(error.response)})
         }
 })(RegistrationForm);
 

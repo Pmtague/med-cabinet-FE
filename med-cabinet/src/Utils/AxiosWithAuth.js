@@ -1,12 +1,12 @@
-// import axios from 'axios'
+import axios from 'axios'
 
-// const axiosWithAuth = () => {
-//     return axios.create({
-//         headers: {
-//             authorization: loacalStorage.getItem('token')
+const axiosWithAuth = () => {
+    return axios.create({
+        headers: {
+            authorization: loacalStorage.getStatus('token')
 
-//         }
-//     })
-// }
+        }
+    })
+}
 
-// export default axiosWithAuth
+export default axiosWithAuth
