@@ -5,6 +5,12 @@ footer {
     font-size: 1.5rem;
     background-color: #574841; 
     color: #f0c8b6;
-    align-items: center;
+    padding-top: 20px; 
     width: 100%;
+}
+@media(max-width: 500px){
+    footer{
+  
+        font-size: 1.3rem;
+    }
 }
