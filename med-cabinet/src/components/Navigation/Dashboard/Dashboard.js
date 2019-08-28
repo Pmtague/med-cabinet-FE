@@ -3,13 +3,14 @@ import React, {Component} from 'react'
 // import DashGrid from './DashGrid'
 // import DashVertMenu from './DashVertMenu'
 import './Dashboard.css'
-import DashBoardCards from './DashBoardCards';
+
+import DashGrid from './DashGrid'
 
 const Dashboards = () =>{
    return(
     <div>
-        <DashBoardCards/>
-        {/* <DashGrid/> */}
+        
+        <DashGrid/>
     </div>
    )
 }
