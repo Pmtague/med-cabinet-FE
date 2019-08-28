@@ -3,10 +3,15 @@ import React, { useState, useEffect } from 'react'
 // import DashGrid from './DashGrid'
 // import DashVertMenu from './DashVertMenu'
 import './Dashboard.css'
+
+
+import DashGrid from './DashGrid'
+
 import { axiosWithAuth } from '../../../utils/axiosWithAuth.js';
 
 import DashBoardCards from './DashBoardCards';
 import Recs from '../Recs/Recs.js';
+
 
 const Dashboards = () =>{
     const [ userData, setUserData ] = useState([]);
@@ -25,9 +30,14 @@ const Dashboards = () =>{
 
    return (
     <div>
+
+        
+        <DashGrid/>
+
         <DashBoardCards/>
         {/* <DashGrid/> */}
         <Recs userData={userData} />
+
     </div>
    )
 }
