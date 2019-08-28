@@ -7,6 +7,8 @@ import Login from './components/Login/Login.js';
 import Footer from './components/Footer/Footer';
 import MedCabinetLogo from './images/MedCabinetLogo.png';
 
+import History from './components/History/History.js';
+
 function App() {
   return (
     <Router>
@@ -14,6 +16,7 @@ function App() {
           <div className='image-logo'>
             <img src={MedCabinetLogo} alt="med cabinet logo" />
           </div>
+          <History />
           <Route path='/login' component={Login} />
           <Route path='/register' component={RegistrationForm} />
           <Footer />
