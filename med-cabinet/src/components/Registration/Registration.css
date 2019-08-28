@@ -1,27 +1,25 @@
 .register-form {
     display: inline-block;
     padding: 20px;
-    width:65%;
+    width: 100%;
+    max-width: 500px;
     align-content: center;
     margin: auto 0;
     border: 1px solid #f0c8b6;;
-    margin-bottom: 60px;
     background-color: #574841;
-    box-sizing: content-box
+    box-sizing: content-box;
 }
-.logo   {
+
+.logo {
+    width: 100%;
     align-content: center;
     align-items: center;
     margin: auto 0;
     padding: 20px;
-    
 }
 
-.register-instructions{
+.register-fields {
     display:flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
     width: 100%;
     
 }
@@ -53,8 +51,11 @@
     width:100%;
     font-size: 2.5rem;
     box-sizing: border-box;
-    font-size: 2.5rem;
-    
+    margin-bottom: 25px;
+    font-size: 2rem;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
 }
 
 .zip {
@@ -81,13 +82,14 @@
     font-size: 2.5rem;
     
 }
-p {
-    display: flex;
-    flex-wrap: wrap;
 
-}
 .register-button{
-    font-size: 1.5rem
+    font-size: 1.8rem;
+    border-radius: 5px;
+    padding: 6px;
+    width: 50%;
+    outline: none;
+    margin-bottom: 25px;
 }
 
 .register-button:hover{

@@ -1,3 +1,4 @@
+
 import React from 'react'
 
 import './App.css';
@@ -12,11 +13,10 @@ import Dashboard from './components/Navigation/Dashboard';
 import {Route, Switch} from 'react-router-dom'
 import RegistrationForm from './components/Registration/RegistrationForm'
 import PrivateRoute from './components/PrivateRoute'
-
+import Login from './components/login/Login.js';
 
 const App =() => {
   return (
- 
       <div className="App">
          <div className= 'navigation'>
               <NavTab />
@@ -30,11 +30,12 @@ const App =() => {
           <div>
           <Switch>
               <Route path = '/register' component=  {RegistrationForm}/>
+              <Route path='/login' component={Login} />
               <PrivateRoute exact path= '/' component= {Dashboard}/>
               {/* <PrivateRoute exact path= '/historicaldata' component= {HistoricalData}/>
               <Route exact path= '/strains' component= {Strains}/>
-              {/* <Route exact path= '/learnmore' component= {learnMore}/> */}
-              {/* <Route exact path= '/conact' component= {ContactUs}/> */} */}
+              <Route exact path= '/learnmore' component= {learnMore}/> 
+              <Route exact path= '/conact' component= {ContactUs}/>  */}
           </Switch>
           </div>
           <div>
