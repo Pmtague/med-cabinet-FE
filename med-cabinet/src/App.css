@@ -5,9 +5,7 @@
 html, body {
   width: 100%;
   font-size: 62.5%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  height: 100vh;
 }
 
 .App {
@@ -23,7 +21,7 @@ html, body {
 .App-header {
   background-color: #be9f92;
   min-height: 100vh;
-  display: flex;
+  display: block;
   flex-direction: column;
   align-items: center;
   font-size: calc(10px + 2vmin);
