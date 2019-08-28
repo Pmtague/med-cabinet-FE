@@ -1,8 +1,7 @@
-
 import React from 'react'
 import './App.css';
 import StrainCards2 from './components/StrainCards2'
-import StrainCards from './components/StrainCards'
+import StrainCards from './components/StrainCards';
 import Footer from './components/Footer/Footer';
 import MedCabinetLogo from './images/MedCabinetLogo.png';
 import NavTab from './components/Navigation/NavTab';
