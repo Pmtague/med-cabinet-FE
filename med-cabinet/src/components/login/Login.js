@@ -18,8 +18,8 @@ const Login = (props) => {
             .post('https://med-cabinet-temp.herokuapp.com/api/users/login', creds)
             .then(res => {
                 localStorage.setItem('token', res.data.payload)
-                props.history.push('/')
-                console.log(creds)
+                props.history.push('/dashboard')
+                console.log(res)
             })
             .catch(err => {
                 console.log('Error while logging in', err.response)
