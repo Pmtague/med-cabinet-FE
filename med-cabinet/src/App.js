@@ -32,10 +32,10 @@ const App =() => {
               <Route path = '/register' component= {RegistrationForm}/>
               <Route path='/login' component= {Login} />
               <Route exact path= '/dashboard' component= {Dashboard}/>
-              {/* <PrivateRoute exact path= '/historicaldata' component= {HistoricalData}/>
+              {/* <PrivateRoute exact path= '/history' component= {HistoricalData}/>
               <Route exact path= '/strains' component= {Strains}/>
               <Route exact path= '/learnmore' component= {learnMore}/> 
-              <Route exact path= '/conact' component= {ContactUs}/>  */}
+              <Route exact path= '/contact' component= {ContactUs}/>  */}
           </Switch>
           </div>
           <div>
