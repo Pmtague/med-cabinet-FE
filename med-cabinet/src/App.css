@@ -50,6 +50,7 @@ html, body {
 .advice-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center
 }
 
 .makeStyles-card-1 {
