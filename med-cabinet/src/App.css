@@ -45,3 +45,12 @@ html, body {
   height: 100%;
   margin-top: 20px;
 }
+
+.advice-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.makeStyles-card-1 {
+  max-width: 20%;
+}
