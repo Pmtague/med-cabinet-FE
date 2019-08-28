@@ -4,9 +4,8 @@ import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 
 import  './Registration.css';
-// import { reset } from 'ansi-colors';
 
-const RegistrationForm = ({ errors, touched, status, isSubmitting }) => {
+function  RegistrationForm ({ errors, touched, status, isSubmitting}) {
 
     const [users, setUsers] = useState([]);
     // console.log(users)
@@ -17,38 +16,42 @@ const RegistrationForm = ({ errors, touched, status, isSubmitting }) => {
         }
     }, [users, status]);
 
+
+
     return (
         <div className='register-form'>  
             <h3>Sign Up</h3>
             <Form>
+
+            <p>Enter your name</p>
                 <Field
-                    className='register-fields'
+                    className='name'
                     name='name'
                     type='text'
-                    placeholder='name'
+                    placeholder='Name'
                 />
                 {touched.name && errors.name && (
                     <p className ='error'>{errors.name}</p>
                 )}
                 
-                <p>Enter an email address</p>
+                <p className='media'>Enter a valid email address</p>
                 <Field
-                    className='register-fields'
+                    className='email-info'
                     name='email'
                     type='email'
-                    placeholder='email'
+                    placeholder='Email'
                 />
                 {touched.email && errors.email && (
                     <p className ='error'>{errors.email}</p>
                 )}
-                
+                <p>Enter your user name</p>
                 <Field 
                    className = 'username'
                    name= 'username'
                    type = 'text'
                    placeholder= 'Userame'
                 />
-                <p>Enter a valid phone number</p>
+                <p>Enter a password</p>
                 <Field
                     className = 'password'
                     name= 'password'
@@ -59,16 +62,14 @@ const RegistrationForm = ({ errors, touched, status, isSubmitting }) => {
                     <p className='error'>{errors.username}</p>
                 )}
 
-                <p>Enter a valid zip code 
-                </p>
+                <p>Enter a valid zip code</p>
                 <Field 
                     className = 'zip'
                     name= 'zip'
                     type = 'number'
                     placeholder= 'Zip Code'
                 />
-                
-                
+
                 {touched.username && errors.username && (
                     <p style={{color: 'orange'}} className = 'error'>{errors.username}</p>
                 )}
@@ -77,6 +78,7 @@ const RegistrationForm = ({ errors, touched, status, isSubmitting }) => {
                 <button className='register-button'type='submit' >Register</button>
                 </div>
         </Form>
+                <p>Already Have An Account?? Login from the menu bar</p>
             </div>
                      
         )

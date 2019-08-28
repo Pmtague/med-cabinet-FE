@@ -1,16 +1,15 @@
-.register-form {
+.register-form{
     display: inline-block;
     padding: 20px;
-    width: 100%;
-    max-width: 500px;
-    align-content: center;
+    width: 65%;
     margin: auto 0;
+    margin-bottom: 60px;
     border: 1px solid #f0c8b6;;
     background-color: #574841;
     box-sizing: content-box;
 }
 
-.logo {
+.logo{
     width: 100%;
     align-content: center;
     align-items: center;
@@ -18,33 +17,39 @@
     padding: 20px;
 }
 
-.register-fields {
+.register-fields{
     display:flex;
     width: 100%;
-    
 }
 
-.username {
+.username{
     display:flex;
     flex-wrap: wrap;
     flex-direction: row;
     width:100%;
-    font-size: 2.5rem;
     box-sizing: border-box;
     font-size: 2.5rem;
 }
-.name {
+@media(max-width: 500px){
+    .username{
+        font-size: 1.4rem;
+    }
+}
+.name{
     display:flex;
     flex-wrap: wrap;
     flex-direction: row;
     width:100%;
-    font-size: 2.5rem;
     box-sizing: border-box;
-    font-size: 2.5rem;
-    
+    font-size: 2.5rem; 
+}
+@media(max-width: 500px){
+    .name{
+        font-size: 1.4rem;
+    }
 }
 
-.email {
+.email-info{
     display:flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -52,27 +57,35 @@
     font-size: 2.5rem;
     box-sizing: border-box;
     margin-bottom: 25px;
-    font-size: 2rem;
+    border-radius: 0 !important;
     padding: 5px;
     border-radius: 5px;
     outline: none;
 }
-
-.zip {
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width:100%;
-    font-size: 2.5rem;
-    box-sizing: border-box;
-    font-size: 2.5rem;
-    margin-bottom: 55px;
+@media(max-width: 500px){
+    .email-info{
+        font-size: 1.4rem;
+        height: 2.3rem;
+    }
 }
 
+.zip{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+    width:100%;
+    font-size: 2.5rem;
+    box-sizing: border-box;
 
-
-.password
-{
+    margin-bottom: 55px;
+}
+@media(max-width: 500px){
+    .zip{
+        font-size: 1.4rem;
+    }
+}
+.password{
     display:flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -80,7 +93,11 @@
     font-size: 2.5rem;
     box-sizing: border-box;
     font-size: 2.5rem;
-    
+}
+@media(max-width: 500px){
+    .password{
+        font-size: 1.4rem;
+    }
 }
 
 .register-button{
@@ -92,8 +109,21 @@
     margin-bottom: 25px;
 }
 
+@media(max-width: 500px){
+    .register-button{
+        font-size: 1.3rem;
+        width: 70%;
+    }
+}
+
 .register-button:hover{
 background-color: #574841;
 color: #f0c8b6;
 }
 
+/* @media(max-width: 500px){
+    .nav-tab {
+        font-size: 2rem;
+        color: orange;
+    }
+} */

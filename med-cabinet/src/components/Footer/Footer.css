@@ -8,3 +8,9 @@ footer {
     padding-top: 20px; 
     width: 100%;
 }
+@media(max-width: 500px){
+    footer{
+  
+        font-size: 1.3rem;
+    }
+}
