@@ -1,0 +1,63 @@
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    
+  }
+  
+  input, option, textarea {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 1rem;
+    width:25%;
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+  
+  .goal-select, .flavor-select, .method-select, .time-select, .effects-select {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 1rem;
+    width:25%;
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+  
+  .goal-select:hover {
+    border: 2px solid #255e2f;
+  }
+  
+  .flavor-select:hover {
+    border: 2px solid #255e2f;
+  }
+  
+  .method-select:hover {
+    border: 2px solid #255e2f;
+  }
+  
+  .time-select:hover {
+    border: 2px solid #255e2f;
+  }
+
+  .effects-select:hover {
+    border: 2px solid #255e2f;
+  }
+  
+  .goal-select, .flavor-select, .method-select, .time-select, .effects-select {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px white;
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+  }
+  
+  button{
+    font-size: 1.5rem
+  }
+  
+  button:hover{
+  background-color: #574841;
+  color: #f0c8b6;
+  }
