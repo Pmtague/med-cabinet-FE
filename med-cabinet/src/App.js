@@ -1,10 +1,10 @@
 
 import React from 'react'
-
 import './App.css';
+import StrainCards2 from './Components/StrainCards2'
+import StrainCards from './Components/StrainCards'
 import Footer from './components/Footer/Footer';
 import MedCabinetLogo from './images/MedCabinetLogo.png';
-
 import NavTab from './components/Navigation/NavTab';
 // import Dashboard from './components/Navigation/Dashboard';
 // import Strains from './components/Navigation/Strains';
