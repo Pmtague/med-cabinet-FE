@@ -5,16 +5,22 @@ import * as Yup from 'yup';
 
 import  './Registration.css';
 
-function  RegistrationForm ({ errors, touched, status, isSubmitting}) {
+// import Context API 
+import { useContext } from 'react';
+import { RegisterContext } from '../../contexts/RegisterContext.js';
 
-    const [users, setUsers] = useState([]);
+function RegistrationForm ({ errors, touched }) {
+
+    // const [users, setUsers] = useState([]);
     // console.log(users)
 
-    useEffect(() => {
-        if (status) {
-            setUsers([...users, status]);
-        }
-    }, [users, status]);
+    const { userID, setUserID } = useContext(RegisterContext);
+
+    // useEffect(() => {
+    //     if (status) {
+    //         setUsers([...users, status]);
+    //     }
+    // }, [users, status]);
 
     return (
         <div className='register-form'>  
@@ -80,6 +86,7 @@ function  RegistrationForm ({ errors, touched, status, isSubmitting}) {
                      
         )
 }
+
 const FormikRegisterationForm = withFormik({
     mapPropsToValues({ name, username, password, email }) {
         return {
@@ -109,9 +116,10 @@ const FormikRegisterationForm = withFormik({
                 .then(response => {
                     console.log(response)
                     setStatus(response.data);
+                    // setUserID(response.data.user_id);
                     resetForm();
                     setSubmitting(false);
-                    window.location = '/login';
+                    window.location = '/mandatory';
                 })
                 .catch(error => {
                     console.log(error.response);

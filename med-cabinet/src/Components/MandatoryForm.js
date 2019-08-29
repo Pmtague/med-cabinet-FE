@@ -4,15 +4,21 @@ import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 import './MandatoryForm.css';
 
+// import Context API 
+import { useContext } from 'react';
+import { RegisterContext } from '../contexts/RegisterContext.js';
+
 const MandatoryForm = ({errors, touched, values, status}) => {
-    const [questioner, setQuestioner] = useState ([]);
+    // const [questioner, setQuestioner] = useState ([]);
+
+    const { userID, setUserID } = useContext(RegisterContext);
 
     // console.log('This is touched', touched);
-    useEffect(() => {
-        if (status) {
-            setQuestioner([...questioner, status]);
-        }
-    },[status]);
+    // useEffect(() => {
+    //     if (status) {
+    //         setQuestioner([...questioner, status]);
+    //     }
+    // },[status]);
 
     return (
         <div className="user-questioner">
@@ -90,9 +96,9 @@ const FormikMandatoryForm = withFormik({
         doctor: Yup.string().required(),
         strain: Yup.string().required()
     }),
-    handleSubmit(values, {setStatus}){
+    handleSubmit(values, { setStatus, userID }){
         axiosWithAuth()
-            .patch(`https://med-cabinet-temp.herokuapp.com/api/users/`, values)
+            .patch(`https://med-cabinet-temp.herokuapp.com/api/users/${userID}`, values)
             .then(response => {
                 localStorage.setStatus('token', response.data.payload)
                 console.log(response)
