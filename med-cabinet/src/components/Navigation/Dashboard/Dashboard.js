@@ -4,29 +4,34 @@ import React, { useState, useEffect } from 'react'
 // import DashVertMenu from './DashVertMenu'
 import './Dashboard.css'
 
-
 import DashGrid from './DashGrid'
 
-import { axiosWithAuth } from '../../../utils/axiosWithAuth.js';
+import axiosWithAuth from '../../../utils/axiosWithAuth.js';
 
 import DashBoardCards from './DashBoardCards';
 import Recs from '../Recs/Recs.js';
 
+// import Context API 
+import { useContext } from 'react';
+import { LoginContext } from '../../../contexts/LoginContext.js';
 
-const Dashboards = () =>{
-    const [ userData, setUserData ] = useState([]);
+const Dashboards = (props) =>{
+    const [ userData, setUserData ] = useState();
 
-    useEffect(() => {
-        axiosWithAuth()
-            .get('https://med-cabinet-temp.herokuapp.com/api/users/')
-            .then(res => {
-                console.log(res.data)
-                setUserData(res.data)
-            }) 
-            .catch(err => {
-                console.log('Error retrieving user data: ', err.response);
-            });
-    }, [])
+    const { creds, setCreds } = useContext(LoginContext);
+
+
+    // useEffect(() => {
+    //     axiosWithAuth()
+    //         .get('https://med-cabinet-temp.herokuapp.com/api/users')
+    //         .then(res => {
+    //             console.log(res.data)
+    //             setUserData(res.data)
+    //         }) 
+    //         .catch(err => {
+    //             console.log('Error retrieving user data: ', err.response);
+    //         });
+    // }, [])
 
    return (
     <div>
@@ -34,9 +39,9 @@ const Dashboards = () =>{
         
         <DashGrid/>
 
-        <DashBoardCards/>
+        {/* <DashBoardCards/> */}
         {/* <DashGrid/> */}
-        <Recs userData={userData} />
+        {/* <Recs userData={userData} /> */}
 
     </div>
    )
