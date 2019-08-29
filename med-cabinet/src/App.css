@@ -1,8 +1,19 @@
+<<<<<<< HEAD
 html,
 body {
   background-color: #be9f92;
   margin: 0;
   padding: 0;
+=======
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  font-size: 62.5%;
+  height: 100vh;
+>>>>>>> d491cf88ed42d7634f323397cc9127396486b642
 }
 
 .App {
@@ -13,7 +24,44 @@ body {
 }
 
 
+<<<<<<< HEAD
+=======
+.App-header {
+  background-color: #be9f92;
+  min-height: 100vh;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+>>>>>>> d491cf88ed42d7634f323397cc9127396486b642
 
 
+<<<<<<< HEAD
 
 
+=======
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.image-logo{
+  height: 100%;
+  margin-top: 20px;
+}
+
+.advice-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.makeStyles-card-1 {
+  max-width: 20%;
+}
+>>>>>>> d491cf88ed42d7634f323397cc9127396486b642
