@@ -31,7 +31,7 @@ const Login = (props) => {
                 setReviews(res.data.reviews);
                 setStrainsReviewed(res.data.reviewedStrains);
                 console.log("res", res)
-                props.history.push('/dashboard')
+                // props.history.push('/mandatory')
             })
             .catch(err => {
                 console.log('Error while logging in', err.response)

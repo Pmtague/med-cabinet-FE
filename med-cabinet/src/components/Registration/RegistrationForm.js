@@ -77,9 +77,13 @@ function RegistrationForm ({ errors, touched }) {
                 {touched.username && errors.username && (
                     <p style={{color: 'orange'}} className = 'error'>{errors.username}</p>
                 )}
+
+                <p>Have an account? Register&nbsp;
+                    <a className="loginRedirect" href="/login">here</a>
+                </p>
                 
                 <div>
-                <button className='register-button'type='submit' >Register</button>
+                    <button className='register-button'type='submit' >Register</button>
                 </div>
         </Form>
             </div>
@@ -119,7 +123,7 @@ const FormikRegisterationForm = withFormik({
                     // setUserID(response.data.user_id);
                     resetForm();
                     setSubmitting(false);
-                    // window.location = '/login';
+                    window.location = '/login';
                 })
                 .catch(error => {
                     console.log(error.response);
