@@ -1,4 +1,11 @@
+<<<<<<< HEAD
+import React from 'react';
+import MandatoryForm from './components/MandatoryForm.js';
+// import ReviewForm from './components/ReviewForm.js';
+import Footer from './components/Footer.js';
+=======
 import React, { useState } from 'react';
+>>>>>>> d491cf88ed42d7634f323397cc9127396486b642
 import './App.css';
 
 import StrainCards2 from './components/StrainCards2'
@@ -32,6 +39,12 @@ const App = () => {
   const [ userID, setUserID ] = useState({ userID: ''}) 
 
   return (
+<<<<<<< HEAD
+    <div className="App">
+      <MandatoryForm />
+      <Footer />
+    </div>
+=======
     <LoginContext.Provider value={{ creds, setCreds,
                                     userD, setUserD,
                                     reviews, setReviews,
@@ -70,6 +83,7 @@ const App = () => {
         </div>
       </RegisterContext.Provider>  
     </LoginContext.Provider>
+>>>>>>> d491cf88ed42d7634f323397cc9127396486b642
   );
 }
 
