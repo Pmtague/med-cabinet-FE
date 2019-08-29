@@ -119,7 +119,7 @@ const FormikRegisterationForm = withFormik({
                     // setUserID(response.data.user_id);
                     resetForm();
                     setSubmitting(false);
-                    window.location = '/mandatory';
+                    // window.location = '/login';
                 })
                 .catch(error => {
                     console.log(error.response);
