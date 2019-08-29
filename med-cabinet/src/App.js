@@ -20,7 +20,7 @@ import MandatoryForm from './components/MandatoryForm.js';
 
 // import Context Object
 import { LoginContext } from './contexts/LoginContext.js';
-import { RegisterContext } from './contexts/RegisterContext.js';
+// import { RegisterContext } from './contexts/RegisterContext.js';
 
 const App = () => {
 
@@ -29,18 +29,25 @@ const App = () => {
   const [ userD, setUserD ] = useState({});
   const [ reviews, setReviews ] = useState([]);
   const [ strainsReviewed, setStrainsReviewed ] = useState([]);
+  const [ answers, setAnswers ] = useState({
+    goal: '',
+    pastUser: false,
+    useFreq: '',
+    intakeTime: ''
+  });
 
   // Register Context Data
-  const [ userID, setUserID ] = useState({ userID: ''}) 
+  // const [ userID, setUserID ] = useState({ userID: ''}) 
 
   return (
 
     <LoginContext.Provider value={{ creds, setCreds,
                                     userD, setUserD,
                                     reviews, setReviews,
-                                    strainsReviewed, setStrainsReviewed
+                                    strainsReviewed, setStrainsReviewed,
+                                    answers, setAnswers
                                  }}>
-      <RegisterContext.Provider value={{ userID, setUserID }}>                           
+      {/* <RegisterContext.Provider value={{ userID, setUserID }}>                            */}
         <div className="App">
           <header className="App-header">
             <div className='navigation'>
@@ -71,7 +78,7 @@ const App = () => {
 
           </header>
         </div>
-      </RegisterContext.Provider>  
+      {/* </RegisterContext.Provider>   */}
     </LoginContext.Provider>
   );
 }

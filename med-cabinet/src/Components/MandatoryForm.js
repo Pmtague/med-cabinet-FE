@@ -1,65 +1,49 @@
-
-import React, { useState, useEffect } from 'react';
-import axiosWithAuth from 'axios';
-import { Form, Field, withFormik } from 'formik';
-import * as Yup from 'yup';
-
+import React from 'react';
+import axiosWithAuth from '../utils/axiosWithAuth.js';
 import './MandatoryForm.css';
 
 // import Context API 
-// import { useContext } from 'react';
-// import { LoginContext } from '../contexts/LoginContext.js';
+import { useContext } from 'react';
+import { LoginContext } from '../contexts/LoginContext.js';
 
 const MandatoryForm = () => {
-    // const { condition, setCondition } = useContext(RegisterContext);
-    // const { feel, setFeel } = useContext(RegisterContext);
-    // const { used, setUsed } = useContext(RegisterContext);
-    // const { intake, setIntake } = useContext(RegisterContext);
-    // const { times, setTimes } = useContext(RegisterContext);
 
-    const { condition, setCondition } = useState({ value: '' });
-
-
-    // const handleChange = e => {
-    //     setCondition({
-    //         ...condition,
-    //         [e.target.name]: e.target.value
-    //     });
-    //     setFeel({
-    //         ...feel,
-    //         [e.target.name]: e.target.value
-    //     });
-    //     setUsed({
-    //         ...used,
-    //         [e.target.name]: e.target.value
-    //     });
-    //     setIntake({
-    //         ...intake,
-    //         [e.target.name]: e.target.value
-    //     });
-    //     setTimes({
-    //         ...times,
-    //         [e.target.name]: e.target.value
-    //     });
-    // };
+    const { userD, setUserD } = useContext(LoginContext);
+    const { answers, setAnswers } = useContext(LoginContext);
 
     const handleChange = e => {
-        setCondition({
-            ...condition,
-            value: e.target.value
+        setAnswers({
+            ...answers,
+            [e.target.name]: e.target.value
         });
     }
+    console.log('answers: ', answers);
+    console.log('user', userD.id);
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        axiosWithAuth()
+            .patch(`https://med-cabinet-temp.herokuapp.com/api/users/${userD.id}`, answers)
+            .then(res => {
+                console.log(res);
+                window.location='/dashboard';
+            })
+            .catch(err => {
+                console.log('Error while logging in', err.response)
+            });
+    };
 
     return (
         <div className="user-questioner">
             <h3>Let's Learn More About You</h3>
-            {/* <form onSubmit={handleSubmit}> */}
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h4>What would you like cannabis to help you deal with?</h4>
-                <select className="condition-select"
-                        value={condition.value}
+                <select name="goal"
+                        className="condition-select"
+                        value={answers.goal}
                         onChange={handleChange}
                 >
+                    <option value="Select">Select</option>
                     <option value="Stress">Stress</option>
                     <option value="Pain">Pain</option>
                     <option value="Nausea">Nausea</option>
@@ -74,28 +58,67 @@ const MandatoryForm = () => {
                     <option value="Eye Pressure">Eye Pressure</option>
                     <option value="Cramps">Cramps</option>
                     <option value="Headaches">Headaches</option>
-                    {/* onSelect={handleChange} */}
-                    {/* type="email"
-                    name="email"
-                    placeholder="email "
-                    value={creds.email}
-                    onChange={handleChange}
-                    required */}
                 </select>
 
-                {/* <input
-                    className="login-fields"
-                    type="password"
-                    name="password"
-                    placeholder="password"
-                    value={creds.password}
-                    onChange={handleChange}
-                    required
-                /> */}
+                {/* <h4>How would you like cannabis to help you feel?</h4>
+                <select name="goal"
+                        className="feel-select"
+                        value={condition}
+                        onChange={handleChange}
+                >
+                    <option value="Happy">Happy</option>
+                    <option value="Euphoric">Euphoric</option>
+                    <option value="Relaxed">Relaxed</option>
+                    <option value="Giggly">Giggly</option>
+                    <option value="Creative">Creative</option>
+                    <option value="Uplifted">Uplifted</option>
+                    <option value="Sleepy">Sleepy</option>
+                    <option value="Energetic">Energetic</option>
+                    <option value="Aroused">Aroused</option>
+                    <option value="Focused">Focused</option>
+                    <option value="Talkative">Talkative</option>
+                    <option value="Hungry">Hungry</option>
+                    <option value="Tingly">Tingly</option>
+                </select> */}
+
+                <h4>Have you used cannabis before?</h4>
+                <select name="pastUser"
+                        className="used-select"
+                        value={answers.pastUser}
+                        onChange={handleChange}
+                >
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+
+                <h4>What is your regular cannabis intake schedule?</h4>
+                <select name="useFreq"
+                        className="intake-select"
+                        value={answers.useFreq}
+                        onChange={handleChange}
+                >
+                    <option value="Select">Select</option>
+                    <option value="Daily">Daily</option>
+                    <option value="Weekly">Weekly</option>
+                    <option value="Monthly">Monthly</option>
+                </select>
+
+                <h4>What time of day is your cannabis intake?</h4>
+                <select name="intakeTime"
+                        className="time-select"
+                        value={answers.intakeTime}
+                        onChange={handleChange}
+                >
+                    <option value="Select">Select</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Evening">Evening</option>
+                    <option value="Night">Night</option>
+                </select>
 
                 <button className="submit-button">
                     Submit
                 </button>
+
             </form>
         </div>
     );
@@ -160,23 +183,23 @@ export default MandatoryForm;
 //                 </Field>
                     
 //                 <Field component="select" className="used-select" name="used">
-//                     <option>Have you used cannabis before?</option>
-//                     <option value="Yes">Yes</option>
-//                     <option value="No">No</option>
+                    // <option>Have you used cannabis before?</option>
+                    // <option value="Yes">Yes</option>
+                    // <option value="No">No</option>
 //                 </Field>
 
 //                 <Field component="select" className="intake-select" name="intake">
-//                     <option>What is your regular cannabis intake schedule?</option>
-//                     <option value="Daily">Daily</option>
-//                     <option value="Weekly">Weekly</option>
-//                     <option value="Monthly">Monthly</option>
+                    // <option>What is your regular cannabis intake schedule?</option>
+                    // <option value="Daily">Daily</option>
+                    // <option value="Weekly">Weekly</option>
+                    // <option value="Monthly">Monthly</option>
 //                 </Field> 
 
 //                 <Field component="select" className="time-select" name="time">
-//                     <option>What time of day is your cannabis intake?</option>
-//                     <option value="Morning">Morning</option>
-//                     <option value="Evening">Evening</option>
-//                     <option value="Night">Night</option>
+                    // <option>What time of day is your cannabis intake?</option>
+                    // <option value="Morning">Morning</option>
+                    // <option value="Evening">Evening</option>
+                    // <option value="Night">Night</option>
 //                 </Field>
 
 //                 <button type="submit">Submit</button>
