@@ -12,8 +12,8 @@ import './DashVertMenu.css'
       return (
         <Menu className='gridMenu-border' vertical>
           <Menu.Item>
-            <Menu.Header>Products</Menu.Header>
-  
+            <Menu.Header>Goals:</Menu.Header>
+              
             <Menu.Menu>
               <Menu.Item
                 name='enterprise'
@@ -27,7 +27,7 @@ import './DashVertMenu.css'
               />
             </Menu.Menu>
           </Menu.Item>
-  
+          
           <Menu.Item>
             <Menu.Header>CMS Solutions</Menu.Header>
   

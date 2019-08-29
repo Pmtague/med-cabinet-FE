@@ -1,0 +1,100 @@
+form {
+    display: block;
+    flex-flow: column nowrap;
+    border: rgb(206, 169, 138) 3px solid;
+    background: #574841;
+    width: 100%;
+    margin: 2.5%
+  }
+  
+  input, option, textarea {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 1.3rem;
+    width:25%;
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+  
+  .goal-select, .flavor-select, .method-select, .time-select, .effects-select {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 1rem;
+    width:30%;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .goal-select:hover {
+    border: 2px solid #255e2f;
+  }
+  
+  .flavor-select:hover {
+    border: 2px solid #255e2f;
+  }
+  
+  .method-select:hover {
+    border: 2px solid #255e2f;
+  }
+  
+  .time-select:hover {
+    border: 2px solid #255e2f;
+  }
+
+  .effects-select:hover {
+    border: 2px solid #255e2f;
+  }
+  
+  .goal-select, .flavor-select, .method-select, .time-select, .effects-select {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px white;
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+  }
+  
+  button{
+    font-size: 1.5rem
+  }
+  
+  button:hover{
+  background-color: #574841;
+  color: #f0c8b6;
+  }
+
+
+  .review-from{
+      width: 30%;
+      font-size: 3vh;
+      height: 100%;
+      border: orange 1px solid
+  }
+
+  .notes {
+      height: 10rem;
+      width: 90%;
+      box-sizing: border-box
+  }
+
+  .review-questions{
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 2.5vh
+  }
+  .review-notes{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start !important;
+      font-size: 1.5rem
+  }
+
+  .submit-button{
+      display: flex;
+      flex-wrap: wrap;
+      width: 30%;
+      justify-content: center; 
+      justify-self: center;
+     margin: 1rem
+  }

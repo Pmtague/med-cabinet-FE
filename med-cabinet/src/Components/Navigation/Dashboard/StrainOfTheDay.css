@@ -1,0 +1,6 @@
+.sod{
+    display: inline-block;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 100px
+}
