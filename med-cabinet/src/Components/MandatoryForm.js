@@ -1,47 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axiosWithAuth from '../utils/axiosWithAuth.js';
 import './MandatoryForm.css';
 
 // import Context API 
-// import { useContext } from 'react';
-// import { LoginContext } from '../contexts/LoginContext.js';
+import { useContext } from 'react';
+import { LoginContext } from '../contexts/LoginContext.js';
 
 const MandatoryForm = () => {
-    // const { condition, setCondition } = useContext(RegisterContext);
-    // const { feel, setFeel } = useContext(RegisterContext);
-    // const { used, setUsed } = useContext(RegisterContext);
-    // const { intake, setIntake } = useContext(RegisterContext);
-    // const { times, setTimes } = useContext(RegisterContext);
 
-    // const handleChange = e => {
-    //     setCondition({
-    //         ...condition,
-    //         [e.target.name]: e.target.value
-    //     });
-    //     setFeel({
-    //         ...feel,
-    //         [e.target.name]: e.target.value
-    //     });
-    //     setUsed({
-    //         ...used,
-    //         [e.target.name]: e.target.value
-    //     });
-    //     setIntake({
-    //         ...intake,
-    //         [e.target.name]: e.target.value
-    //     });
-    //     setTimes({
-    //         ...times,
-    //         [e.target.name]: e.target.value
-    //     });
-    // };
-
-    const [ answers, setAnswers ] = useState({
-        goal: '',
-        pastUser: false,
-        useFreq: '',
-        intakeTime: ''
-    });
+    const { userD, setUserD } = useContext(LoginContext);
+    const { answers, setAnswers } = useContext(LoginContext);
 
     const handleChange = e => {
         setAnswers({
@@ -50,12 +18,25 @@ const MandatoryForm = () => {
         });
     }
     console.log('answers: ', answers);
+    console.log('user', userD.id);
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        axiosWithAuth()
+            .patch(`https://med-cabinet-temp.herokuapp.com/api/users/${userD.id}`, answers)
+            .then(res => {
+                console.log(res);
+                window.location='/dashboard';
+            })
+            .catch(err => {
+                console.log('Error while logging in', err.response)
+            });
+    };
 
     return (
         <div className="user-questioner">
             <h3>Let's Learn More About You</h3>
-            {/* <form onSubmit={handleSubmit}> */}
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h4>What would you like cannabis to help you deal with?</h4>
                 <select name="goal"
                         className="condition-select"
@@ -116,6 +97,7 @@ const MandatoryForm = () => {
                         value={answers.useFreq}
                         onChange={handleChange}
                 >
+                    <option value="Select">Select</option>
                     <option value="Daily">Daily</option>
                     <option value="Weekly">Weekly</option>
                     <option value="Monthly">Monthly</option>
@@ -127,6 +109,7 @@ const MandatoryForm = () => {
                         value={answers.intakeTime}
                         onChange={handleChange}
                 >
+                    <option value="Select">Select</option>
                     <option value="Morning">Morning</option>
                     <option value="Evening">Evening</option>
                     <option value="Night">Night</option>

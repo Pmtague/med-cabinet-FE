@@ -6,15 +6,15 @@ import * as Yup from 'yup';
 import  './Registration.css';
 
 // import Context API 
-import { useContext } from 'react';
-import { RegisterContext } from '../../contexts/RegisterContext.js';
+// import { useContext } from 'react';
+// import { RegisterContext } from '../../contexts/RegisterContext.js';
 
 function RegistrationForm ({ errors, touched }) {
 
     // const [users, setUsers] = useState([]);
     // console.log(users)
 
-    const { userID, setUserID } = useContext(RegisterContext);
+    // const { userID, setUserID } = useContext(RegisterContext);
 
     // useEffect(() => {
     //     if (status) {
