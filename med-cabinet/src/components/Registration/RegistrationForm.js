@@ -16,8 +16,6 @@ function  RegistrationForm ({ errors, touched, status, isSubmitting}) {
         }
     }, [users, status]);
 
-
-
     return (
         <div className='register-form'>  
             <h3>Sign Up</h3>
@@ -49,7 +47,7 @@ function  RegistrationForm ({ errors, touched, status, isSubmitting}) {
                    className = 'username'
                    name= 'username'
                    type = 'text'
-                   placeholder= 'Userame'
+                   placeholder= 'Username'
                 />
                 <p>Enter a password</p>
                 <Field
