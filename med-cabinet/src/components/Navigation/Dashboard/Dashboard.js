@@ -1,8 +1,10 @@
+
 import React, { useState, useEffect } from 'react'
 // import { Grid, Image, Menu } from 'semantic-ui-react'
 // import DashGrid from './DashGrid'
+
 // import DashVertMenu from './DashVertMenu'
-import './Dashboard.css'
+import './DashGrid.css'
 
 import DashGrid from './DashGrid'
 
@@ -36,7 +38,6 @@ const Dashboards = (props) =>{
    return (
     <div>
 
-        
         <DashGrid/>
 
         {/* <DashBoardCards/> */}
