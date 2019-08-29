@@ -18,6 +18,8 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import CardData from './CardData'
+
+import './DashBoardCards.js'
 console.log(CardData)
 const useStyles = makeStyles(theme => ({
   card: {
@@ -51,7 +53,7 @@ function DashBoardCards() {
   }
 
   return (
-    <Card className={classes.card}>
+    <Card className= {classes.card}>
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>

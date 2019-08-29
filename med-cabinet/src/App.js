@@ -1,11 +1,11 @@
 import React from 'react'
 import './App.css';
+
 import StrainCards2 from './components/StrainCards2'
 import StrainCards from './components/StrainCards';
 import Footer from './components/Footer/Footer';
 import MedCabinetLogo from './images/MedCabinetLogo.png';
 import NavTab from './components/Navigation/NavTab';
-// import Dashboard from './components/Navigation/Dashboard';
 // import Strains from './components/Navigation/Strains';
 // import ContactUs from './components/Navigation';
 import HistoricalData from './components/Navigation/History/HistoricalData.js';
@@ -29,13 +29,13 @@ const App = () => {
           </div>
           <div>
           <Switch>
-              <Route path = '/register' component= {RegistrationForm}/>
+              <Route path = '/register' component= {RegistrationForm} />
               <Route path='/login' component= {Login} />
-              <Route exact path= '/dashboard' component= {Dashboard}/>
-              {/* <PrivateRoute exact path= '/history' component= {HistoricalData}/>
-              <Route exact path= '/strains' component= {Strains}/>
-              <Route exact path= '/learnmore' component= {learnMore}/> 
-              <Route exact path= '/contact' component= {ContactUs}/>  */}
+              <PrivateRoute exact path= '/dashboard' component= {Dashboard} />
+              <PrivateRoute exact path= '/history' component= {HistoricalData} />
+              {/* <Route exact path= '/strains' component= {Strains}/> */}
+              {/* <Route exact path= '/learnmore' component= {learnMore}/>  */}
+              {/* <Route exact path= '/contact' component= {ContactUs} />  */}
           </Switch>
           </div>
           <div>
