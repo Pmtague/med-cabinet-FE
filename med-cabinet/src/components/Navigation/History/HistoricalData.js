@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axiosWithAuth from '../../../utils/axiosWithAuth.js';
+// import { axiosWithAuth } from '../../../utils/axiosWithAuth.js';
+
 
 // import { Link } from 'react-router-dom';
 
@@ -10,8 +12,7 @@ const History = () => {
 	const [ historyData, setHistoryData ] = useState([]);
 
 	useEffect(() => {
-		// axiosWithAuth()
-		axios
+		axiosWithAuth()
 			.get('http://strainapi.evanbusse.com/dqEbrK0/strains/search/name/Candy')
 			.then(res => {
 				console.log(res.data);

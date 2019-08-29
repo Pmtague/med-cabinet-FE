@@ -5,18 +5,22 @@ import * as Yup from 'yup';
 
 import  './Registration.css';
 
-function  RegistrationForm ({ errors, touched, status, isSubmitting}) {
+// import Context API 
+import { useContext } from 'react';
+import { RegisterContext } from '../../contexts/RegisterContext.js';
 
-    const [users, setUsers] = useState([]);
+function RegistrationForm ({ errors, touched }) {
+
+    // const [users, setUsers] = useState([]);
     // console.log(users)
 
-    useEffect(() => {
-        if (status) {
-            setUsers([...users, status]);
-        }
-    }, [users, status]);
+    const { userID, setUserID } = useContext(RegisterContext);
 
-
+    // useEffect(() => {
+    //     if (status) {
+    //         setUsers([...users, status]);
+    //     }
+    // }, [users, status]);
 
     return (
         <div className='register-form'>  
@@ -49,7 +53,7 @@ function  RegistrationForm ({ errors, touched, status, isSubmitting}) {
                    className = 'username'
                    name= 'username'
                    type = 'text'
-                   placeholder= 'Userame'
+                   placeholder= 'Username'
                 />
                 <p>Enter a password</p>
                 <Field
@@ -73,15 +77,20 @@ function  RegistrationForm ({ errors, touched, status, isSubmitting}) {
                 {touched.username && errors.username && (
                     <p style={{color: 'orange'}} className = 'error'>{errors.username}</p>
                 )}
+
+                <p>Have an account? Register&nbsp;
+                    <a className="loginRedirect" href="/login">here</a>
+                </p>
                 
                 <div>
-                <button className='register-button'type='submit' >Register</button>
+                    <button className='register-button'type='submit' >Register</button>
                 </div>
         </Form>
             </div>
                      
         )
 }
+
 const FormikRegisterationForm = withFormik({
     mapPropsToValues({ name, username, password, email }) {
         return {
@@ -111,6 +120,7 @@ const FormikRegisterationForm = withFormik({
                 .then(response => {
                     console.log(response)
                     setStatus(response.data);
+                    // setUserID(response.data.user_id);
                     resetForm();
                     setSubmitting(false);
                     window.location = '/login';

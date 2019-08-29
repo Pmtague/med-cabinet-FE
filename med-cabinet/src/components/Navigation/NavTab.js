@@ -15,13 +15,13 @@ const NavTab = () => {
         <Link to = '/dashboard'>Dashboard</Link>
         </div>
         <div className='menu-link'>
-        <Link to = '/historicaldata/'>Historical Data </Link>
+        <Link to = '/history'>Historical Data </Link>
         </div>
         <div className='menu-link'>
         <Link to = '/strains/'>Strains</Link>
         </div>    
         <div className='menu-link'>
-        <Link to = '/historicaldata/'>Learn More </Link>
+        <Link to = '/learn'>Learn More </Link>
         </div>
         <div className='menu-link'>
         <Link to = '/contact/'>Contact Us </Link>
