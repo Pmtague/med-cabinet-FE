@@ -13,7 +13,7 @@ const MandatoryForm = () => {
     // const { intake, setIntake } = useContext(RegisterContext);
     // const { times, setTimes } = useContext(RegisterContext);
 
-    const { condition, setCondition } = useState({ value: '' });
+    const { condition, setCondition } = useState({ val: '' });
 
 
     // const handleChange = e => {
@@ -42,7 +42,7 @@ const MandatoryForm = () => {
     const handleChange = e => {
         setCondition({
             ...condition,
-            value: e.target.value
+            [e.target.name]: e.target.value
         });
     }
 
@@ -53,7 +53,7 @@ const MandatoryForm = () => {
             <form>
                 <h4>What would you like cannabis to help you deal with?</h4>
                 <select className="condition-select"
-                        value={condition.value}
+                        value={condition}
                         onChange={handleChange}
                 >
                     <option value="Stress">Stress</option>
